@@ -15,6 +15,13 @@ const UserReducer=(state=intialState,action)=>{
             userInfo: state.userInfo.concat(action.payload)
             
           }
+
+          case 'DELETE_USER':
+           return {
+            ...state,
+            userInfo: state.userInfo.concat(action.payload)
+            
+          }
         
           default:
               return state;      

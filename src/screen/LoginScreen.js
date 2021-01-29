@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import BASEURL from '../api/endpoint';
 import {connect} from "react-redux";
-
+import store from '../store/UserStore';
 
  class LoginScreen extends Component {
 
@@ -24,7 +24,14 @@ import {connect} from "react-redux";
       dataSource:{},
       userInfo:[]
     }
+    
   }
+
+  componentDidMount() { 
+  
+    var obj=JSON.stringify(store.getState().userInfo);
+    console.log('componentDidMount--'+obj);
+  } 
 
   async onClickListener(){
  
